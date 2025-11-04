@@ -1,0 +1,10 @@
+// Dark Mode styles
+import { styled } from 'styled-components';
+
+const DarkModeContainer = styled.div`
+  /* Add styles for dark mode, keep it optional */
+  /* Here you can add any custom styles for dark mode */
+`;
+
+// Export the DarkModeContainer component
+export default DarkModeContainer;
