@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './Themes';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'; // Importing this correctly doesn't resolve context issue
 // Instead, import only the components needed from '@mui/material
 import { Box } from '@mui/material'; // Changed this line
-import { DarkModeContextProvider } from './Context/DarkMode';
+import { DarkModeProvider } from './Context/DarkMode';
 
 const theme = createTheme({
   palette: {
@@ -19,13 +18,13 @@ const theme = createTheme({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DarkModeContextProvider>
+    <DarkModeProvider>
       <ThemeProvider theme={theme}>
         <Box component="div">
           <App />
         </Box>
       </ThemeProvider>
-    </DarkModeContextProvider>
+    </DarkModeProvider>
   </React.StrictMode>
 );
 
@@ -35,9 +34,9 @@ try {
   require.resolve('./index.css');
   console.log("index.css file exists and is correct");
 
-  // Test for Themes existence
-  require.resolve('./Themes');
-  console.log("Themes file exists and is correct");
+  // Test for DarkMode context existence
+  require.resolve('./Context/DarkMode');
+  console.log("DarkMode context exists and is correct");
 
   // Test for App existence
   require.resolve('./App');

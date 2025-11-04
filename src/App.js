@@ -1,80 +1,58 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { createContext, useContext } from 'react';
-import './DarkMode.css';
-
-const DarkModeContext = createContext();
+import { useDarkMode } from './Context/DarkMode';
+import './styles/DarkMode.css';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, toggleDarkMode } = useDarkMode();
   const theme = createTheme({
     palette: {
       mode: darkMode ? 'dark' : 'light',
     },
   });
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
   // Test and modify the application component
   const testName = 'Test App';
   const testButton = 'Test Button';
 
   return (
-    <DarkModeContext.Provider value={darkMode}>
-      <ThemeProvider theme={theme}>
-        <div className={`App ${darkMode ? 'dark' : ''}`}>{testName}</div>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <button onClick={toggleDarkMode} className="toggle-button">
-            {darkMode ? 'Toggle to Light Mode' : 'Toggle to Dark Mode'}
-          </button>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        {/* Add this line at bottom of the document */}
-        {darkMode && (
-          <div className="background">
-            <div className="dark-text">
-              You are in Dark Mode!
-            </div>
-            <div className="dark-text">
-              This text will appear only when Dark mode is enabled!
-            </div>
+    <ThemeProvider theme={theme}>
+      <div className={`App ${darkMode ? 'dark' : ''}`}>{testName}</div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <button onClick={toggleDarkMode} className="toggle-button">
+          {darkMode ? 'Toggle to Light Mode' : 'Toggle to Dark Mode'}
+        </button>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+      {/* Add this line at bottom of the document */}
+      {darkMode && (
+        <div className="background">
+          <div className="dark-text">
+            You are in Dark Mode!
           </div>
-        )}
-      </ThemeProvider>
-    </DarkModeContext.Provider>
+          <div className="dark-text">
+            This text will appear only when Dark mode is enabled!
+          </div>
+        </div>
+      )}
+    </ThemeProvider>
   );
 }
 
-function useDarkMode() {
-  const darkMode = useContext(DarkModeContext);
-  return darkMode;
-}
-
-function AppWrapper() {
-  return (
-    <DarkModeContext.Provider value={useDarkMode()} /* Changed here to correctly pass the value down the context */
-    >
-      <App />
-    </DarkModeContext.Provider>
-  );
-}
-
-export default AppWrapper;
+export default App;
 
 /* Added this comment to preserve existing code in the original task description */
 // Test and modify the application component

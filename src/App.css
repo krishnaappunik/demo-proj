@@ -1,16 +1,5 @@
 /* global imports for MUI and custom components */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
-/* Import Material UI components and create a custom theme */
-@import "~@mui/material/styles";
-/* Import custom components */
-@import "./Context/DarkMode";
-/* Add new imports for testing and debugging */
-@import "react-dev-utils/styles/debug.css";
-@import "react-dev-utils/styles/test.css";
-/* Fix application styles */
-@import "styles/fixed-styles.css";
-/* Update custom theme styles */
-@import "styles/custom-theme.css";
 
 /* Add new global styles for testing */
 body {

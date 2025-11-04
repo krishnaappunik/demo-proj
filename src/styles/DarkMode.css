@@ -1,10 +1,31 @@
-// Dark Mode styles
-import { styled } from 'styled-components';
+/* Dark Mode styles */
 
-const DarkModeContainer = styled.div`
-  /* Add styles for dark mode, keep it optional */
-  /* Here you can add any custom styles for dark mode */
-`;
+.App.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
 
-// Export the DarkModeContainer component
-export default DarkModeContainer;
+.App.dark .App-header {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.App.dark .toggle-button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.App.dark .toggle-button:hover {
+  background-color: #555;
+}
+
+.App.dark .background {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.App.dark .dark-text {
+  color: #fff;
+}
