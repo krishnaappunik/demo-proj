@@ -4,3 +4,37 @@
 @import "~@mui/material/styles";
 /* Import custom components */
 @import "./Context/DarkMode";
+/* Add new imports for testing and debugging */
+@import "react-dev-utils/styles/debug.css";
+@import "react-dev-utils/styles/test.css";
+/* Fix application styles */
+@import "styles/fixed-styles.css";
+/* Update custom theme styles */
+@import "styles/custom-theme.css";
+
+/* Add new global styles for testing */
+body {
+  box-sizing: border-box; /* Add box-sizing property */
+  margin: 0; /* Add margin property */
+  padding: 0; /* Add padding property */
+  font-family: Montserrat, sans-serif; /* Update font family */
+  -webkit-font-smoothing: antialiased; /* Update font smoothing */
+  -moz-osx-font-smoothing: grayscale; /* Update font smoothing */
+  -ms-overflow-style: none; /* Update overflow style */
+  scrollbar-width: none; /* Update scrollbar */
+}
+
+/* Update component styles */
+.mantine-Button {
+  padding: 8px 16px; /* Update button padding */
+  border-radius: 4px; /* Update button border radius */
+  font-family: Montserrat, sans-serif; /* Update button font family */
+}
+
+/* Add new styles for testing */
+.test-class {
+  background-color: #f0f0f0; /* Update background color */
+  color: #333; /* Update text color */
+  padding: 16px; /* Update padding */
+  border: 1px solid #ddd; /* Update border */
+}

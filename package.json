@@ -2,6 +2,13 @@
   "name": "demo-proj",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "test": "react-scripts test",
+    "test:all": "jest --testPathPattern=\"**(/*)?(test|spec)?.(js|jsx)\" && echo 'All files tested.'",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -10,13 +17,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-scripts": "5.0.1",
+    "jest": "^29.1.0",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +37,93 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "keywords": [],
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "moduleDirectories": ["node_modules"],
+    "testEnvironment": "jsdom",
+    "setupFiles": ["<rootDir>/jest.setup.js"],
+    "testMatch": [
+      "**/__tests__/**/*.(js|jsx|ts|tsx)",
+      "**/?(*.)+(spec|test).(js|jsx|ts|tsx)",
+      "**/__mocks__/**/"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "babel-jest",
+      "^.+\\.css$": "jest-css-preprocessor",
+      "^.+\\.less$": "less-vars-to-jss-vars",
+      "^.+\\.less$": "jest-css-preprocessor",
+      "^.+\\.sass$": "jest-css-preprocessor",
+      "^.+\\.scss$": "sass-jest",
+      "^.+\\.ts$": "ts-jest",
+      "^.+\\.tsx$": "ts-jest",
+      "^.+\\.js": "jsextract",
+      "^.+\\.css": "css-extract",
+      "^.+\\.less": "less-extract",
+      "^.+\\.sass": "sass-extract",
+      "^.+\\.scss": "sass-extract",
+      "^.+\\.json$": "jest-extended",
+      ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|wav)": "file-loader"
+    },
+    "snapshotSerializers": [
+      "jest-extended"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?@?(react|react-native|raf|jest-)/)",
+      "node_modules/(?!(jest-)?@?(react|react-native|raf|jest-)/react/)",
+      "dist/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/node_modules/react/dist/",
+      "<rootDir>/node_modules/react-dom/dist/",
+      "<rootDir>/node_modules/babel-loader/",
+      "<rootDir>/node_modules/css-loader/"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json"
+    ],
+    "moduleDirectories": ["node_modules"],
+    "maxWorkers": "75%",
+    "testEnvironment": "jsdom",
+    "setupFiles": ["<rootDir>/jest.setup.js"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/node_modules/react/dist/",
+      "<rootDir>/node_modules/react-dom/dist/",
+      "<rootDir>/node_modules/babel-loader/",
+      "<rootDir>/node_modules/css-loader/"
+    ],
+    "testResultsProcessor": "",
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
+    "check-leaks": {
+      "enabled": true
+    },
+    "errorOnDeprecated": true
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.11.8",
+    "babel-jest": "^29.1.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "npm:i- css-loader",
+    "dotenv-cli": "^8.1.0",
+    "eslint": "^8.0.1",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.0",
+    "jest-extended": "^0.13.0",
+    "jest-css-preprocessor": "^0.3.3",
+    "less-vars-to-jss-vars": "^4.1.0",
+    "node-sass": "^7.0.1",
+    "sass-jest": "^0.3.0",
+    "sass-loader": "npm:i- sass-loader",
+    "setup-test-env-compiler": "^1.0.0",
+    "style-loader": "^3.3.0",
+    "ts-jest": "^29.0.2",
+    "webpack": "^5.74.0"
   }
 }
