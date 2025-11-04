@@ -21,7 +21,7 @@ root.render(
   <React.StrictMode>
     <DarkModeContextProvider>
       <ThemeProvider theme={theme}>
-        <Box component="div"> <!-- Modified this line -->
+        <Box component="div">
           <App />
         </Box>
       </ThemeProvider>
