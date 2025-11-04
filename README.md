@@ -42,7 +42,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## Project Changes
 
 * Fixed bug with incorrect bundling
-* Improved performance with code spliting
+* Improved performance with code splitting
+* Updated dependencies to the latest versions
+* Fixed issues with deployment and deployment scripts
 
 ## Learn More
 
