@@ -5,13 +5,15 @@ import './Themes';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles'; // Importing this correctly doesn't resolve context issue
+// Instead, import only the components needed from '@mui/material
+import { Box } from '@mui/material'; // Changed this line
 import { DarkModeContextProvider } from './Context/DarkMode';
 
 const theme = createTheme({
   palette: {
     mode: localStorage.getItem('mode') || 'light',
-  },
+  }
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +21,9 @@ root.render(
   <React.StrictMode>
     <DarkModeContextProvider>
       <ThemeProvider theme={theme}>
-        <App />
+        <Box component="div"> <!-- Modified this line -->
+          <App />
+        </Box>
       </ThemeProvider>
     </DarkModeContextProvider>
   </React.StrictMode>
