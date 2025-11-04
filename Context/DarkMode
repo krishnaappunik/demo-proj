@@ -1,0 +1,34 @@
+// Context/DarkMode.js
+
+import { createTheme } from '@mui/material/styles'; // fixed import
+import { createContext, useState, useEffect } from 'react';
+import theme from '@mui/material/styles'; // fixed import
+
+// Define the DarkModeContext
+const DarkModeContext = createContext();
+
+// Define the DarkModeProvider
+const DarkModeProvider = ({ children }) => {
+  const [darkMode, setDarkMode] = useState(false);
+  const themeMode = darkMode ? 'dark' : 'light';
+
+  // Create a material UI theme with dark mode support
+  const themeSettings = createTheme({
+    palette: {
+      mode: themeMode,
+    },
+  });
+
+// Update the theme with a custom dark palette
+  useEffect(() => {
+    theme.palette.mode = themeMode;
+  }, [darkMode]);
+
+  return (
+    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+};
+
+export { DarkModeContext, DarkModeProvider };
