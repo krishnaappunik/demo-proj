@@ -19,8 +19,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={`App ${darkMode ? 'dark' : ''}`}>{testName}</div>
       <header className="App-header">
+        <h1>Test Project</h1>
+        <div className={`App ${darkMode ? 'dark' : ''}`}>{testName}</div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -53,6 +54,3 @@ function App() {
 }
 
 export default App;
-
-/* Added this comment to preserve existing code in the original task description */
-// Test and modify the application component
